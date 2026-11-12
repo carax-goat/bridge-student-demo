@@ -1,0 +1,10 @@
+{
+  "name": "bridge-student-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bridge 학생 음성 토론 UI·UX 회의용 데모",
+  "scripts": {
+    "start": "node preview.cjs",
+    "check": "node --check dist/app.js && node --check preview.cjs"
+  }
+}
