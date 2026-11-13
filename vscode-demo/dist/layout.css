@@ -1,0 +1,11 @@
+/* Shared page layout: contextual controls sit above, never beside, the scene. */
+.workspace{flex-direction:column;align-items:stretch}
+.workspace>.screen{flex:none;min-width:0;margin:0 auto}
+.workspace>.practice-switcher{flex:0 0 auto;align-self:center;min-width:0;min-height:0;height:auto;margin:20px auto 0;padding:12px 18px;border-radius:13px}
+.teacher-shell .practice-switcher{max-width:1190px}
+.practice-context{min-width:0}.practice-context small{line-height:1.6}
+.practice-view-switch{flex-shrink:0}.practice-exit{flex-shrink:0}
+.teacher-create-grid>*,.teacher-lobby-grid>*,.teacher-live-grid>*{min-width:0}
+@media(min-width:901px){.practice-context{flex:1 1 auto}.practice-view-switch{width:auto}.practice-context strong{font-size:12px}.practice-context small{font-size:11px}}
+@media(max-width:900px){.workspace>.practice-switcher{gap:10px;padding:13px 16px}.practice-context{flex:1 1 calc(100% - 80px)}.practice-view-switch{flex:1 0 100%}}
+@media(max-width:600px){.workspace>.practice-switcher{padding:12px 14px;margin-top:18px}.practice-context small{font-size:10px}.practice-view-switch button{min-height:44px}.practice-exit{font-size:10px}}
