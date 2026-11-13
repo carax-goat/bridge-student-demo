@@ -1,0 +1,10 @@
+:root{--motion-ease:cubic-bezier(.2,.7,.2,1)}
+.screen{animation:none}
+.button,.group-card,.topic-option,.vote-person,.choice,.demo-tab,.device-picks button,.priority-role{transition:transform 160ms var(--motion-ease),background-color 180ms,border-color 180ms,box-shadow 180ms}
+@media(hover:hover) and (pointer:fine){.button:not(:disabled):hover{transform:translateY(-1px)}.group-card:hover,.topic-option:hover,.priority-role:hover{transform:translateY(-2px);box-shadow:0 6px 18px #26344a09}}
+.button:not(:disabled):active,.group-card:active,.priority-role:active{transform:scale(.98)}
+.journey-link{transition:color 180ms,border-color 180ms}.modal-overlay{animation:soft-overlay 160ms ease-out}.modal{animation:soft-sheet 220ms var(--motion-ease)}
+.role-pictogram{transition:background-color 180ms}.motion-preference{background:none;color:#86868b;font-size:11px;min-height:40px;padding:6px 10px;white-space:nowrap}
+@keyframes soft-overlay{from{opacity:0}to{opacity:1}}@keyframes soft-sheet{from{opacity:.6;transform:translateY(8px) scale(.99)}to{opacity:1;transform:none}}
+body[data-motion=reduce] *,body[data-motion=reduce] *::before,body[data-motion=reduce] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

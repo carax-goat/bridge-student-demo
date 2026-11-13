@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="Bridge 팀의 whose side? 학생 토론 디자인 시안. 목소리로 생각을 나누고 서로 다른 관점을 이해해요.">
+  <title>whose side? — 서로의 생각을 잇는 시간</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="teacher.css">
+  <link rel="stylesheet" href="matching.css">
+  <link rel="stylesheet" href="role-perspectives.css">
+  <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="practice.css">
+</head>
+<body>
+  <a class="skip" href="#screen">본문으로 이동</a>
+  <div class="demo-bar">
+    <span class="demo-label">학생 경험 디자인 시안</span>
+    <div class="demo-actions"><div class="view-switch"><button class="demo-tab active" data-view="experience">학생 화면</button><button class="demo-tab" data-view="rationale">디자인 노트</button></div><button id="device-toggle" class="device-button" aria-label="모바일 화면으로 보기" aria-pressed="false"></button><button id="reset-demo" class="reset-button" aria-label="데모 기록을 초기화하고 처음으로"></button></div>
+  </div>
+  <div id="shell" class="shell">
+    <header class="app-header"><a class="brand" href="#discussion" aria-label="whose side? 토론 화면"><span id="brand-symbol"></span>whose side?</a><div class="header-right"><span class="room-label">연습 테이블 <span>·</span> B-204</span><button id="guide-button" class="icon-button" aria-label="플레이 방법 보기"></button></div></header>
+    <div class="journey-bar"><nav id="journey-nav" aria-label="시연 화면 이동"></nav></div>
+    <main class="workspace"><span id="scene-number" class="sr-only">5</span><div id="screen" class="screen" tabindex="-1"></div></main>
+    <footer class="workspace-footer"><span>whose side? <span>·</span> by Bridge</span><span>음성·요약은 예시 시연입니다. <a href="https://yunan-henna.vercel.app" target="_blank" rel="noopener">현재 서비스 보기 ↗</a></span></footer>
+  </div>
+  <div id="modal-root"></div><div id="toast" role="status" aria-live="polite"></div>
+  <script src="role-pictograms.js"></script>
+  <script src="app.js"></script>
+  <script src="teacher.js"></script>
+  <script src="role-perspectives-data.js"></script>
+  <script src="matching.js"></script>
+  <script src="role-perspectives.js"></script>
+  <script src="motion.js"></script>
+  <script src="practice.js"></script>
+</body>
+</html>

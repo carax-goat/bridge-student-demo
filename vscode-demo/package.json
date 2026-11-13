@@ -1,0 +1,14 @@
+{
+  "name": "whose-side-design-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "whose side? student and teacher design demo by Bridge",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node preview.cjs",
+    "check": "node scripts/check.cjs",
+    "test": "node scripts/test-matching.cjs"
+  }
+}
