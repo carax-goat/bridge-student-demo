@@ -1,4 +1,6 @@
-# Bridge 학생 UI·UX 데모
+# whose side? — 학생 UI·UX 데모
+
+**제품명: whose side? · 제작 팀: Bridge**
 
 학생이 비밀 역할을 맡아 **목소리로 토론하고, 말하는 동안 AI가 내용을 요약하는 경험**을 보여주는 회의용 디자인 데모입니다. 기존 서비스와 분리된 정적 웹사이트입니다.
 
@@ -6,7 +8,7 @@
 
 ## 온라인 데모
 
-**[Bridge 사이트 바로 열기](https://bridge-student-design-261112.brouto5942.chatgpt.site/)**
+**[whose side? 사이트 바로 열기](https://bridge-student-design-261112.brouto5942.chatgpt.site/)**
 
 인터넷이 연결된 컴퓨터나 모바일 브라우저에서 로그인이나 설치 없이 접속할 수 있습니다.
 
