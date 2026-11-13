@@ -55,7 +55,7 @@ const stages = [
  {id:'result',label:'결과',en:'BEHIND THE PERSPECTIVE',desc:'역할과 실제 입장을 함께 확인'},
  {id:'reflection',label:'회고',en:'BEYOND THE GAME',desc:'다른 입장에서 배운 점을 기록'},
 ];
-const topic = '학교 과제에 생성형 AI 사용을 허용해야 할까?';
+let topic = '학교 과제에 생성형 AI 사용을 허용해야 할까?';
 const storageKey = 'bridge-design-demo-v2-voice';
 const defaults = {guideVersion:2,guideStep:'issue',guideCompleted:false,nickname:'유나',selectedAvatar:0,roleRevealed:false,secretHidden:false,ready:false,belief:'조건부 찬성',opening:'',notes:'',vote:null,voteReason:'',voted:false,eventSeen:false,reflection:'',rating:3,saved:false,transcripts:[]};
 let state;
@@ -64,7 +64,7 @@ try {
  state={...defaults,...saved};
  if(saved.guideVersion!==defaults.guideVersion){state.guideVersion=defaults.guideVersion;state.guideStep='issue';state.guideCompleted=false;persist();}
 } catch { state = {...defaults}; }
-let current = stages.some(s => s.id === location.hash.slice(1)) ? location.hash.slice(1) : 'discussion';
+let current = stages.some(s => s.id === location.hash.slice(1)) ? location.hash.slice(1) : 'entrance';
 if(current==='lobby'&&!state.guideCompleted){current='orientation';history.replaceState(null,'','#orientation');}
 let view = 'experience', compact = false, voiceTab = 'voice', handRaised = false, seconds = 222, timerRunning = false, modalReturnFocus = null;
 const voice = {active:false,completed:false,partial:'',words:[],cursor:0,interval:null,started:0,revision:0,summaryKey:''};
@@ -270,7 +270,7 @@ document.addEventListener('input',e=>{
  if(e.target.id==='reflection-text'){state.reflection=e.target.value;state.saved=false;persist();$('.saved-reflection')?.remove();}
 });
 document.addEventListener('submit',e=>{
- if(e.target.id==='join-form'){e.preventDefault();const code=$('#room-code').value.trim().toUpperCase();const name=$('#nickname').value.trim();if(code!=='BR2046'){$('#join-error').textContent='시연용 방 코드는 BR2046이에요.';$('#room-code').focus();return;}if(!name){$('#join-error').textContent='이름이나 별명을 입력해주세요.';$('#nickname').focus();return;}state.nickname=name;state.ready=false;state.guideStep='issue';state.guideCompleted=false;persist();closeModal();navigate('orientation',true);}
+ if(e.target.id==='join-form'){e.preventDefault();const code=$('#room-code').value.trim().toUpperCase();const name=$('#nickname').value.trim();if(code!==(window.demoRoomCode||'BR2046')){$('#join-error').textContent='시연용 방 코드는 '+(window.demoRoomCode||'BR2046')+'이에요.';$('#room-code').focus();return;}if(!name){$('#join-error').textContent='이름이나 별명을 입력해주세요.';$('#nickname').focus();return;}state.nickname=name;state.ready=false;state.guideStep='issue';state.guideCompleted=false;persist();closeModal();navigate('orientation',true);}
  if(e.target.id==='opening-form'){e.preventDefault();state.opening=$('#opening').value.trim();persist();navigate('discussion',true);}
  if(e.target.id==='vote-form'){e.preventDefault();const reason=$('#vote-reason').value.trim();if(state.vote===null||!reason){$('#vote-error').textContent='참가자와 발언 근거를 함께 선택해주세요.';return;}state.voteReason=reason;persist();openModal(`<div class="eyebrow">ONE LAST LOOK</div><h2 id="modal-title">${people[state.vote].name}의 관점으로<br>추리를 마칠까요?</h2><div class="brief-quote">${esc(state.voteReason)}</div><p>선택한 참가자와 근거를 확인해 주세요.<br>제출하면 바로 역할 공개 화면으로 넘어가요.</p><div class="button-row">${button('다시 생각하기','close-modal','secondary','back')}${button('추리 제출하기','confirm-vote','','check')}</div>`);}
  if(e.target.id==='reflection-form'){e.preventDefault();const text=$('#reflection-text').value.trim();if(!text){$('#reflection-error').textContent='오늘 새롭게 이해한 점을 한 문장으로 남겨주세요.';return;}state.reflection=text;state.saved=true;persist();render();toast('내 생각을 이 브라우저에 저장했어요.');}
