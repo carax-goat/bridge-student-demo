@@ -1,6 +1,7 @@
 /* Adapt to the actual app width, including the desktop mobile preview. */
-.shell{container-type:inline-size;container-name:app;min-width:0}
+.shell{container-type:inline-size;container-name:app;min-width:0;word-break:keep-all;overflow-wrap:anywhere}
 .brand{white-space:nowrap;flex-shrink:0}
+.workspace>.practice-switcher[hidden]{display:none}
 .screen input,.screen textarea,.screen select{max-width:100%}
 .screen :is(.split,.section-grid,.discussion-grid,.portal-paths,.teacher-fields,.priority-slots)>*{min-width:0}
 .modal{max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow-y:auto}
