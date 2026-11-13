@@ -70,6 +70,7 @@ npm start
 | `dist/role-perspectives-data.js` | 역할의 목표·걱정 데이터 |
 | `dist/role-perspectives.js`, `.css` | 역할별 관점·발언 준비·정체 표시 |
 | `dist/practice.js`, `dist/practice.css` | 혼자 연습하기의 학생·선생님 전환 |
+| `dist/mobile.css` | 실제 앱 너비에 따른 모바일·태블릿·모바일 미리보기 배치 |
 | `dist/motion.js`, `dist/motion.css` | 모션과 동작 줄이기 |
 | `dist/role-pictograms.js`, `dist/pictograms/` | 재사용 가능한 SVG 픽토그램 |
 | `preview.cjs` | 의존성 없는 로컬 HTTP 서버 |
@@ -115,7 +116,7 @@ npm test
 - 실행 주소는 http://127.0.0.1:4173/#entrance 입니다.
 - 저장소 전체를 열었으면 cd vscode-demo 후 실행하거나 whose-side-demo.code-workspace를 여세요.
 - dist/index.html의 CSS 로딩 순서는 styles.css → teacher.css → matching.css →
-  role-perspectives.css → motion.css → practice.css → layout.css 입니다.
+  role-perspectives.css → motion.css → practice.css → layout.css → mobile.css 입니다.
 - JavaScript 로딩 순서는 role-pictograms.js → app.js → teacher.js →
   role-perspectives-data.js → matching.js → role-perspectives.js → motion.js → practice.js 입니다.
 - 최신 공통 배치 수정이 들어 있는 layout.css를 반드시 포함하고 다른 스타일 뒤에 로드하세요.
@@ -201,6 +202,9 @@ npm test
   현재 발언·요약·모둠 관찰은 시연 데이터임을 유지하세요.
 - 기존 앱에 실제 기능이 있다면 그 연결을 보존하고 UI를 통합하세요.
   새로운 서버 서비스나 인증·배포 설정 변경이 필요하면 구현 범위를 분명히 보고하세요.
+
+
+- 모바일 추가 기준: dist/mobile.css를 layout.css 다음에 로드하세요. .shell을 container-type:inline-size와 container-name:app으로 지정하고 실제 앱 너비에 따라 반응형으로 바꾸세요. 720px 이하에서 상단 데모 도구 모음을 두 줄로 정리하고 메뉴 글자는 줄바꿈하지 않게 하세요. 480px 이하에서 역할 카드는 한 열, 선생님 설정 입력은 한 열로 배치하세요. 연습 전환 바는 설명/나가기 아래에 두 시점 버튼을 배치하고, 수업 제어 바는 안전 영역과 44px 터치 크기를 확보하세요. 데스크톱의 모바일 미리보기에서도 동일한 배치가 적용되어야 합니다.
 
 [완료 조건과 검증]
 - npm run check와 npm test가 통과해야 합니다.

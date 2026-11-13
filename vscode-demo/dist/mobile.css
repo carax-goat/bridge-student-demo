@@ -1,0 +1,68 @@
+/* Adapt to the actual app width, including the desktop mobile preview. */
+.shell{container-type:inline-size;container-name:app;min-width:0}
+.brand{white-space:nowrap;flex-shrink:0}
+.screen input,.screen textarea,.screen select{max-width:100%}
+.screen :is(.split,.section-grid,.discussion-grid,.portal-paths,.teacher-fields,.priority-slots)>*{min-width:0}
+.modal{max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow-y:auto}
+@media(max-width:720px){
+  .demo-bar{display:block;padding:9px 16px}
+  .demo-label{display:block;max-width:none;margin-bottom:7px;font-size:10px}
+  .demo-actions{width:100%;gap:8px}
+  .view-switch{flex:1;min-width:0}
+  .demo-tab{flex:1;min-height:34px;white-space:nowrap;padding:5px 8px;font-size:11px}
+  .reset-button{flex:0 0 34px;min-height:34px}
+}
+@container app (max-width:720px){
+  .app-header{height:auto;min-height:72px;padding:16px 18px;gap:12px;flex-wrap:wrap}
+  .brand{font-size:24px;letter-spacing:-1px}
+  .header-right{gap:8px;margin-left:auto;min-width:0}
+  .room-label{font-size:10px;white-space:normal;overflow-wrap:anywhere}
+  #journey-nav{width:100%;padding:0 18px;gap:24px;scroll-padding-inline:18px}
+  .journey-link{flex-shrink:0;min-height:48px;font-size:12px}
+  .workspace>.screen{width:calc(100% - 32px);padding-top:26px}
+  .workspace>.practice-switcher,.teacher-tablet .practice-switcher{width:calc(100% - 32px);padding:12px;margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+  .practice-context{min-width:0;gap:8px}
+  .practice-context strong{font-size:12px}
+  .practice-context small{font-size:11px;max-width:none;line-height:1.6}
+  .practice-exit{order:1;min-height:44px;font-size:11px;white-space:nowrap;padding:0 4px}
+  .practice-view-switch{order:2;grid-column:1/-1;width:100%;min-width:0;display:flex}
+  .practice-view-switch button{flex:1;justify-content:center;min-width:0;min-height:44px;padding:9px 8px;white-space:nowrap}
+  .portal h1{font-size:32px;letter-spacing:-1.2px}
+  .portal-sub{font-size:14px;line-height:1.8}
+  .portal-paths,.teacher-welcome,.teacher-create-grid,.teacher-lobby-grid,.teacher-live-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+  .portal-paths{margin-top:26px}.portal-paths article{padding:24px}
+  .teacher-heading{display:block;margin-bottom:26px}
+  .teacher-heading h1{font-size:26px;overflow-wrap:anywhere}
+  .teacher-heading p{font-size:13px}
+  .teacher-panel{padding:20px}.teacher-welcome{padding:24px}
+  .teacher-create-grid>.teacher-panel{position:static}
+  .topic-options,.teacher-groups{grid-template-columns:minmax(0,1fr)}
+  .device-picks{display:flex;width:100%;margin-top:18px}.device-picks button{flex:1;min-height:44px}
+  .room-code-panel{display:block;padding:22px}.room-code-panel>div:last-child{margin-top:18px;flex-direction:row;flex-wrap:wrap}
+  .teacher-section-title{flex-wrap:wrap}.participation{grid-template-columns:minmax(0,1fr)}
+  .teacher-stats{gap:8px}.teacher-stats article{padding:16px 10px}.teacher-stats strong{font-size:26px}
+  .priority-slots{grid-template-columns:minmax(0,1fr);gap:10px}
+  .preference-heading{display:block}.preference-heading h2{font-size:22px}
+  .preference-heading>.tag{margin-top:8px}.preference-bottom{flex-direction:column;align-items:stretch}
+  .preference-bottom .button{width:100%;white-space:normal}
+  .priority-assigned{min-width:0}.priority-assigned strong{overflow-wrap:anywhere}
+  .split,.section-grid,.discussion-grid,.large-role-wrap{grid-template-columns:minmax(0,1fr);gap:18px}
+  .scene-heading h1{font-size:26px}.scene-heading p{font-size:13px}
+  .scene-count{display:none}.panel-pad,.form-card,.room-scene,.brief-card{padding:22px}
+  .voice-controls{flex-wrap:wrap}.voice-mic{min-width:0;flex:1}.voice-input-hint{display:none}
+  .text-input,input.text-input,textarea.text-input,.teacher-panel select{font-size:16px}
+  .workspace-footer{width:calc(100% - 32px);display:block}
+}
+@container app (max-width:480px){
+  .preference-roles,.teacher-tablet .preference-roles{grid-template-columns:minmax(0,1fr);gap:12px}
+  .priority-role{padding:18px}.priority-role h3{font-size:15px;margin-top:12px}
+  .priority-role p{font-size:12px;min-height:0}.rank-buttons button{min-height:44px;font-size:13px}
+  .teacher-fields{grid-template-columns:minmax(0,1fr)}
+  .teacher-controls .teacher-fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .teacher-stats{grid-template-columns:minmax(0,1fr)}
+  .teacher-stats article{display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
+  .teacher-stats strong{margin:0}.teacher-hint{align-items:flex-start}
+  .teacher-tablet .teacher-touch-dock,.teacher-touch-dock{left:16px;right:16px;bottom:max(12px,env(safe-area-inset-bottom));width:auto;max-width:none;transform:none;padding:10px;gap:6px}
+  .teacher-touch-dock>span{display:none}.teacher-touch-dock .button{min-width:0;min-height:44px;flex:1;white-space:normal;font-size:11px;padding:8px 6px}
+  .teacher-screen{padding-bottom:110px}
+}
