@@ -4,6 +4,14 @@
 
 흰색·연한 회색 바탕, 절제된 파란색 버튼, 읽기 쉬운 글자와 일관된 여백으로 구성했습니다. 데스크톱과 모바일 화면을 지원합니다.
 
+## 온라인 데모
+
+**[Bridge 사이트 바로 열기](https://bridge-student-design-261112.brouto5942.chatgpt.site/)**
+
+인터넷이 연결된 컴퓨터나 모바일 브라우저에서 로그인이나 설치 없이 접속할 수 있습니다.
+
+[첫 화면부터 시연하기](https://bridge-student-design-261112.brouto5942.chatgpt.site/#entrance)
+
 ## 다른 컴퓨터에서 열기
 
 1. 이 저장소의 **Code → Download ZIP**을 누르고 압축을 풉니다. 또는 Git으로 이 저장소를 복제합니다.
