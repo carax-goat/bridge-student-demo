@@ -5,4 +5,4 @@ function rolePictogram(role, extraClass='') {
  if(!symbol)return '';
  return '<span class="role-pictogram '+extraClass+'" aria-hidden="true"><img src="pictograms/'+symbol.id+'.svg" alt="" width="64" height="64"></span>';
 }
-function pictogramGallery(){return '<section class="design-notes-section"><h2>한눈에 읽는 여섯 가지 역할.</h2><p class="pictogram-intro">역할을 나타내는 핵심 상징을 같은 선 굵기와 비례의 단색 픽토그램으로 표현했어요.</p><div class="pictogram-gallery">'+Object.entries(roleSymbols).map(([role,symbol])=>'<article>'+rolePictogram(role)+'<h3>'+role+'</h3><p>'+symbol.meaning+'</p></article>').join('')+'</div></section>';}
+function pictogramGallery(){return '<section class="design-notes-section"><h2>역할의 관점을 한눈에.</h2><p class="pictogram-intro">역할을 나타내는 핵심 상징을 같은 선 굵기와 비례의 단색 픽토그램으로 표현했어요.</p><div class="pictogram-gallery">'+Object.entries(roleSymbols).map(([role,symbol])=>'<article>'+rolePictogram(role)+'<h3>'+role+'</h3><p>'+symbol.meaning+'</p></article>').join('')+'</div></section>';}
