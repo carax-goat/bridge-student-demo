@@ -46,7 +46,7 @@ function avatar(id, cls='avatar'){
 }
 const stages = [
  {id:'entrance',label:'시작',en:'ENTER THE TABLE',desc:'코드와 이름만으로 가볍게 시작'},
- {id:'orientation',label:'이용 안내',en:'GETTING STARTED',desc:'이슈 소개, 게임 소개와 규칙을 확인하고 입장'},
+ {id:'orientation',label:'이용 안내',en:'GETTING STARTED',desc:'주제 소개, 게임 소개와 규칙을 확인하고 입장'},
  {id:'lobby',label:'대기실',en:'TAKE YOUR SEAT',desc:'함께할 사람과 오늘의 주제 확인'},
  {id:'role',label:'내 역할',en:'YOUR SECRET ROLE',desc:'내 역할의 입장과 목표 이해'},
  {id:'briefing',label:'생각 정리',en:'A MOMENT TO THINK',desc:'첫 발언을 준비하는 짧은 시간'},
@@ -94,11 +94,11 @@ function render(){
 }
 function entrance(){return `<div class="welcome"><div class="welcome-mark">${icon('users',29)}</div><p class="eyebrow">서로 다른 입장에서 시작하는 토론</p><h1>말하면서,<br>서로를 이해해요.</h1><p class="welcome-description">누군가의 역할이 되어 생각을 나눠보세요.<br>말의 핵심은 AI가 정리해줄게요.</p><div class="button-row">${button('방 코드로 입장','join-dialog')}${button('먼저 연습해보기','practice','secondary','play')}</div><p class="welcome-facts">6–8명 <span>·</span> 약 15분 <span>·</span> 회원가입 없이</p><div class="welcome-flow"><div><span>01</span><h2>역할을 받고</h2><p>나와 다른 입장이 되어봐요.</p></div><div><span>02</span><h2>목소리로 나누고</h2><p>대화의 핵심을 함께 읽어요.</p></div><div><span>03</span><h2>새롭게 이해해요</h2><p>친구의 관점을 발견해요.</p></div></div></div>`;}
 function orientation(){
- const steps=[['issue','이슈 소개'],['video','게임 소개'],['rules','게임 규칙']];
+ const steps=[['issue','주제 소개'],['video','게임 소개'],['rules','게임 규칙']];
  const active=Math.max(0,steps.findIndex(([id])=>id===state.guideStep));
  const clips={
-  issue:{title:'이슈 소개 영상',description:'오늘 함께 이야기할 주제와 배경을 알아봐요.',heading:topic,copy:'같은 도구를 두고도 서로 다른 생각이 있어요.<br>이 이슈에서 어떤 선택과 고민이 생기는지 먼저 살펴볼게요.',back:'시작 화면으로',next:'게임 소개 영상 보기',nextAction:'orientation-video'},
-  video:{title:'게임 소개 영상',description:'어떤 게임인지, 어떻게 함께하는지 알아봐요.',heading:'다른 입장이 되어 대화하는 시간.',copy:'누군가의 역할로 생각을 나누고, 말 속에 숨은 관점을 찾아보세요.<br>시작하기 전에 게임의 흐름을 함께 알아볼게요.',back:'이슈 소개로',next:'게임 규칙 확인하기',nextAction:'orientation-rules'}
+  issue:{title:'주제 소개 영상',description:'오늘 함께 이야기할 주제와 배경을 알아봐요.',heading:topic,copy:'같은 도구를 두고도 서로 다른 생각이 있어요.<br>이 이슈에서 어떤 선택과 고민이 생기는지 먼저 살펴볼게요.',back:'시작 화면으로',next:'게임 소개 영상 보기',nextAction:'orientation-video'},
+  video:{title:'게임 소개 영상',description:'어떤 게임인지, 어떻게 함께하는지 알아봐요.',heading:'다른 입장이 되어 대화하는 시간.',copy:'누군가의 역할로 생각을 나누고, 말 속에 숨은 관점을 찾아보세요.<br>시작하기 전에 게임의 흐름을 함께 알아볼게요.',back:'주제 소개로',next:'게임 규칙 확인하기',nextAction:'orientation-rules'}
  };
  const clip=clips[steps[active][0]];
  const rules=[
