@@ -14,11 +14,13 @@
   <link rel="stylesheet" href="practice.css">
   <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="variants.css">
 </head>
 <body>
   <a class="skip" href="#screen">본문으로 이동</a>
   <div class="demo-bar">
     <span class="demo-label">학생 경험 디자인 시안</span>
+    <nav class="design-variants" aria-label="디자인 시안 선택"><a class="selected" href="index.html#discussion" aria-current="page">01 <span>기존 디자인</span></a><a href="mafia/index.html#discussion">02 <span>추리 게임</span></a></nav>
     <div class="demo-actions"><div class="view-switch"><button class="demo-tab active" data-view="experience">학생 화면</button><button class="demo-tab" data-view="rationale">디자인 노트</button></div><button id="device-toggle" class="device-button" aria-label="모바일 화면으로 보기" aria-pressed="false"></button><button id="reset-demo" class="reset-button" aria-label="데모 기록을 초기화하고 처음으로"></button></div>
   </div>
   <div id="shell" class="shell">

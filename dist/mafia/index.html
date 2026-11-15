@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="../">
+  <meta name="theme-color" content="#0d111a">
+  <meta name="description" content="whose side? 두 번째 디자인 시안. 비밀 역할과 음성 토론을 중심으로 구성한 추리 게임 인터페이스.">
+  <title>whose side? — 추리 게임 시안</title>
+  <link rel="stylesheet" href="mafia/shared/styles.css">
+  <link rel="stylesheet" href="mafia/shared/teacher.css">
+  <link rel="stylesheet" href="mafia/shared/matching.css">
+  <link rel="stylesheet" href="mafia/shared/role-perspectives.css">
+  <link rel="stylesheet" href="variants.css">
+  <link rel="stylesheet" href="mafia/game.css">
+  <link rel="stylesheet" href="mafia/room.css">
+</head>
+<body class="noir" data-storage-key="whose-side-noir-student-v1" data-classroom-key="whose-side-noir-classroom-v1" data-preference-key="whose-side-noir-preferences-v1">
+  <a class="skip" href="mafia/index.html#screen">본문으로 이동</a>
+  <div class="demo-bar">
+    <span class="demo-label">DESIGN 02 · 추리 게임 시안</span>
+    <nav class="design-variants" aria-label="디자인 시안 선택"><a href="index.html#discussion">01 <span>기존 디자인</span></a><a class="selected" href="mafia/index.html#discussion" aria-current="page">02 <span>추리 게임</span></a></nav>
+    <div class="demo-actions"><div class="view-switch"><button class="demo-tab active" data-view="experience">학생 화면</button><button class="demo-tab" data-view="rationale">디자인 노트</button></div><button id="device-toggle" class="device-button" aria-label="모바일 화면으로 보기" aria-pressed="false"></button><button id="reset-demo" class="reset-button" aria-label="데모 기록을 초기화하고 처음으로"></button></div>
+  </div>
+  <div id="shell" class="shell">
+    <aside class="game-rail">
+      <a class="game-logo" href="mafia/index.html#entrance" aria-label="whose side? 시작 화면"><span class="game-logo-mark">W<span>?</span></span><strong>whose side<span>?</span></strong><small>A GAME OF PERSPECTIVES</small></a>
+      <p class="rail-label">GAME JOURNEY</p>
+      <nav id="journey-nav" aria-label="시연 화면 이동"></nav>
+      <div class="rail-bottom"><span class="rail-connection"><i></i> 연습 서버</span><p>서로 다른 시선,<br>하나의 테이블.</p><span>BY BRIDGE</span></div>
+    </aside>
+    <div class="game-content">
+      <header class="app-header"><a class="brand" href="mafia/index.html#entrance" aria-label="whose side? 시작 화면"><span id="brand-symbol"></span>whose side?</a><div class="header-room"><span class="room-number">2046</span><div><strong>서로의 관점을 찾는 방</strong><span>자유 토론 · 연습 테이블</span></div></div><div class="header-right"><span class="room-label"><i></i> 6 / 6 참여 중</span><button id="guide-button" class="icon-button" aria-label="플레이 방법 보기"></button></div></header>
+      <main class="workspace"><span id="scene-number" class="sr-only">6</span><div id="screen" class="screen" tabindex="-1"></div></main>
+      <footer class="workspace-footer"><span>whose side? <span>·</span> by Bridge</span><span>회의용 데모 · 음성인식과 AI 요약은 예시 시연입니다.</span></footer>
+    </div>
+  </div>
+  <div id="modal-root"></div><div id="toast" role="status" aria-live="polite"></div>
+  <script src="mafia/shared/role-pictograms.js"></script>
+  <script src="mafia/shared/app.js"></script>
+  <script src="mafia/shared/teacher.js"></script>
+  <script src="mafia/shared/role-perspectives-data.js"></script>
+  <script src="mafia/shared/matching.js"></script>
+  <script src="mafia/shared/role-perspectives.js"></script>
+  <script src="mafia/game.js"></script>
+</body>
+</html>
